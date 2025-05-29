@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
   return (
-    <html lang="en">
+    <html lang="en" className ="">
       <head>
         {/* <script>
           console.log('head in ')
@@ -44,7 +44,7 @@ export default function RootLayout({
           </header>
           {children}
           <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-            Footer
+            <p>&copy; 2025 Ikesh V. All rights reserved.</p>
           </footer>
         </div>
       </body>

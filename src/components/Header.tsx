@@ -1,11 +1,8 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
-import styles from "./Header.module.css";
 import { ThemeSwitcher } from "./ThemSwitcher";
-import { CircleUser, Github, House, Mail } from "lucide-react";
+import { Github, Mail } from "lucide-react";
 
 
 type TimeDisplayProps = {
@@ -40,22 +37,9 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ locale = "en-GB" }) => {
 export default TimeDisplay;
 
 export const Header = () => {
-  const pathname = usePathname() ?? "";
-  const headerItems = [
-    { 
-      label: 'About',
-      icon:  <CircleUser />,
-      href: '/about'
-    }
-  ]
-
   return (
     <>
       <div className="flex gap-4">
-        <a href="/"><House /></a>
-        <VerticalSpacer />
-        {headerItems.map(item => <a href={item.href}><span className="flex gap-1">{item.icon}{item.label}</span></a>)}
-        <VerticalSpacer />
         <Mail />
         <Github />
         <VerticalSpacer />
