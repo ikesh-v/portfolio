@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,8 +37,9 @@ export default function RootLayout({
             <Header />
           </header>
           {children}
-          <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-            <p>&copy; 2025 Ikesh V</p>
+          {/* Contact */}
+          <footer className="pt-8 border-t mt-10 text-center space-y-2 text-sm text-gray-600">
+            <p>Made with ❤️ by Ikesh V</p>
           </footer>
         </div>
       </body>

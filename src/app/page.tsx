@@ -5,131 +5,109 @@
 //   Bike,
 //   Gamepad,
 // } from "lucide-react";
-
-// export default function Home() {
-//   return (
-//     <main className="flex flex-col gap-[32px]">
-//       <div className="flex row-start-2 columns-2 gap-36 justify-center">
-//         <section className="flex flex-col gap-4 basis-6/10 flex-0">
-//           <span className="text-8xl">
-//             Hello there,
-//           </span>
-//           <div className="flex gap-8">
-//             <div className="w-2 bg-(--ascent-1)"></div>
-//             <section className="text-xl">
-//               <p>
-//                 I'm <span className="text-(--ascent-1)">Ikesh</span> — a web developer who loves building fast, clean, and responsive apps. I specialize in frontend development with a focus on high-performance, scalable architecture and smooth, user-friendly experiences.
-//               </p>
-//               <p>
-//                 I've worked on developing a web framework-agnostic platform that integrates and hosts multiple applications, built for scalability and seamless interoperability.
-//               </p>
-//               <p>
-//                 Read more <a href="/about">About Me</a>
-//               </p>
-//             </section>
-//           </div>
-//         </section>
-//       </div>
-//       <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-10 items-center">
-//       {/* Left: Image or Avatar */}
-//       {/* <div className="flex justify-center">
-//         <img
-//           src="/profile.jpg" // Replace with your actual image path
-//           alt="Ikesh V"
-//           className="rounded-2xl shadow-xl w-64 h-64 object-cover"
-//         />
-//       </div> */}
-
-//       {/* Right: About Text */}
-//       <div>
-//         <h2 className="text-3xl font-bold mb-4">About Me</h2>
-//         <p className="text-gray-700 mb-4">
-//           I'm <strong>Ikesh V</strong>, a frontend-focused web developer based in Bangalore with 4+ years of experience building high-performance, scalable apps.
-//         </p>
-//         <p className="text-gray-700 mb-4">
-//           I've worked on developing web framework-agnostic platforms that integrate and host multiple applications — like the Kyndryl Bridge — focusing on modular design and seamless UX.
-//         </p>
-//         <p className="text-gray-700">
-//           Outside of work, I love tinkering with electronics, 3D modeling, gaming, and riding motorcycles.
-//         </p>
-//       </div>
-
-//       {/* Bottom: Skills + Fun Facts */}
-//       <div className="md:col-span-2 grid md:grid-cols-2 gap-8 mt-12">
-//         {/* Skills */}
-//         <div>
-//           <h3 className="text-xl font-semibold mb-4">Skills</h3>
-//           <ul className="grid grid-cols-2 gap-2 text-gray-800">
-//             <li>React & TypeScript</li>
-//             <li>JavaScript (ES6+)</li>
-//             <li>HTML/CSS</li>
-//             <li>CI/CD & GitHub Actions</li>
-//             <li>Webpack & Vite</li>
-//             <li>Responsive Design</li>
-//           </ul>
-//         </div>
-
-//         {/* Fun Facts */}
-//         <div>
-//           <h3 className="text-xl font-semibold mb-4">Fun Facts</h3>
-//           <ul className="space-y-3 text-gray-700">
-//             <li className="flex items-center gap-3"><Settings className="w-5 h-5" /> Built apps across multiple stacks</li>
-//             <li className="flex items-center gap-3"><Bike className="w-5 h-5" /> Motorcycle enthusiast & modder</li>
-//             <li className="flex items-center gap-3"><Gamepad className="w-5 h-5" /> Gamer & 3D modeling hobbyist</li>
-//             <li className="flex items-center gap-3"><Code className="w-5 h-5" /> Passionate about clean, scalable code</li>
-//           </ul>
-//         </div>
-//       </div>
-//     </div>
-//     </main>
-//   );
-// }
 'use client'
 import Image from 'next/image';
 import { Mail, Github, Linkedin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
+const projects = [
+  {
+    title: "FlipCart",
+    tags: ["MongoDB", "Express.js", "Angular", "Node.Js"],
+    description: "A FlipKart clone using MEAN stack",
+    github: "https://github.com/ikesh-v/FlipCart",
+  },
+  // {
+  //   title: "Shared Auth-Aware Header",
+  //   tags: ["Microfrontend", "Angular"],
+  //   description: "Cut session creation time by 80% with an optimized shared header across applications.",
+  //   github: "https://github.com/ikesh-v",
+  // },
+  // {
+  //   title: "CI/CD Optimizer",
+  //   tags: ["Docker", "CI/CD"],
+  //   description: "Streamlined pipelines, reducing lead time for hotfixes by 70%.",
+  //   github: "https://github.com/ikesh-v",
+  // },
+];
+
 export default function Home() {
   return (
-    <div className="min-h-screen p-8">
+    <div className="p-6 max-w-5xl mx-auto font-sans space-y-12">
       <div className='gradient-background'></div>
-      <section className="flex flex-row justify-between items-center flex-wrap mb-12 gap-16">
-        <div className='max-w-150'>
-          <h1 className="text-6xl font-bold">Hello There.</h1>
-          <p className="text-lg">I'm <b>Ikesh</b>, a <b>web engineer</b> and <b>frontend developer</b>, with 4+ years of expirence building scalable and performance oriented web applications</p>
-        </div>
-        <div className="flex items-center gap-4">
-
-          <Image
-            src="/hero-image.svg"
-            width={400}
-            height={400}
-            alt='hero-image'
-          >
-          </Image>
-        </div>
-      </section>
-
-      <section className="mb-12 h-96 w-full">
-        <p>
-          
+      {/* Hero Section */}
+      <section className="text-center space-y-4">
+        <h1 className="text-4xl font-bold">Hello There.</h1>
+        {/* <p className="text-xl text-gray-500">Frontend Engineer – Angular, React, SvelteKit</p> */}
+        <p className="dark:text-slate-400 light:text-gray-500 max-w-xl mx-auto">
+           I'm <b>Ikesh</b>, a <b>web engineer</b> with 4+ years of experience building performant, scalable frontend applications. Adept at CI/CD,
+          clean architectures, and UX-focused development.
         </p>
+        {/* <div className="flex justify-center gap-4">
+          <a href="mailto:ikeshyadav1@gmail.com" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Contact Me</a>
+          <a href="/Ikesh-V-Frontend-Engineer-Resume-4Y.pdf" download className="border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-50">Download Resume</a>
+        </div> */}
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-2">Skills</h2>
-        <ul className="list-disc list-inside space-y-1">
-          <li>Frontend: HTML, CSS, JavaScript, React, Tailwind</li>
-          <li>DevOps: Docker, Jenkins, GitHub Actions, CI/CD</li>
-          <li>Tools: Figma, Postman, Webpack, VSCode</li>
-        </ul>
+      {/* Experience Section */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Work Experience</h2>
+        <div className="space-y-4">
+          <div className="border p-4 rounded shadow">
+            <h3 className="text-lg font-semibold">Kyndryl – Senior Associate II (2021–Present)</h3>
+            <ul className="list-disc ml-5 mt-2 text-sm dark:text-slate-400 light:text-gray-500 space-y-1">
+              <li>Improved dashboard architecture (SvelteKit), reduced load time by 60%.</li>
+              <li>Built production-grade order status widget in 2 weeks (Angular).</li>
+              <li>Enhanced shared auth-aware header, reducing session creation time by 80%.</li>
+              <li>Optimized CI/CD pipelines, reduced critical fix lead time by 70%.</li>
+            </ul>
+          </div>
+          <div className="border p-4 rounded shadow">
+            <h3 className="text-lg font-semibold">Schneider Electric – Software Engineer Intern (2021)</h3>
+            <p className="text-sm dark:text-slate-400 light:text-gray-500">Built a ReactJS-based UI for a network device, improving usability and UX.</p>
+          </div>
+        </div>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-2">Experience</h2>
-        <ul className="list-disc list-inside space-y-1">
-          <li><strong>Kyndryl</strong> – Improved dashboard performance and optimized pipelines.</li>
-          <li><strong>Schneider Electric</strong> – Developed responsive apps and implemented testing workflows.</li>
+      {/* Projects */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Featured Projects</h2>
+        <div className="grid gap-4 md:grid-cols-2">
+          {projects.map((project, i) => (
+            <div key={i} className="border p-4 rounded shadow">
+              <h3 className="text-lg font-semibold mb-1">{project.title}</h3>
+              <p className="text-sm dark:text-slate-400 light:text-gray-500 mb-2">{project.description}</p>
+              <div className="flex gap-2 flex-wrap mb-2">
+                {project.tags.map((tag, j) => (
+                  <span key={j} className="bg-gray-200 px-2 py-0.5 rounded text-xs">{tag}</span>
+                ))}
+              </div>
+              <a href={project.github} target="_blank" className="text-blue-600 text-sm underline">View on GitHub</a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Tech Stack</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm dark:text-slate-400 text-gray-500">
+          <span>Angular</span><span>React.js</span><span>SvelteKit</span>
+          <span>TypeScript</span><span>Redux</span><span>Node.js</span>
+          <span>MongoDB</span><span>MySQL</span><span>HTML/CSS</span>
+          <span>Jest</span><span>Playwright</span><span>Vite</span>
+          <span>Docker</span><span>GitHub</span><span>CI/CD</span>
+          <span>Cypress</span><span>Webpack</span><span>Responsive Design</span>
+        </div>
+      </section>
+
+      {/* Achievements and Education */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Achievements & Education</h2>
+        <ul className="list-disc ml-5 text-sm dark:text-slate-400 light:text-gray-500 space-y-1">
+          <li>Published papers in Springer ICICC and IEEE GCAT (2021).</li>
+          <li>Ranked 997 out of 180,000+ in KCET 2017.</li>
+          <li>B.E. in Computer Science, MSRIT Bangalore (2017–2021), CGPA: 9.16</li>
         </ul>
       </section>
     </div>

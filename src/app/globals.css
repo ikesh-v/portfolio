@@ -16,18 +16,21 @@
   html {
     --background: #ffffff;
     --foreground: #171717;
+    --secondary: #6b7280;
   }
 
   @media (prefers-color-scheme: dark) {
     html {
       --background: #0a0a0a;
       --foreground: #ededed;
+      --secondary: #94a3b8;
     }
   }
 
   html[data-theme=light] {
     --background:#ededed;
     --foreground: #0a0a0a;
+    --secondary: #6b7280;
   }
 }
 
